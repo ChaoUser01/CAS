@@ -3,6 +3,7 @@ project(CAS)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(
-    Differentiator
+    CAS
     src/main.cpp
+    src/core/Node.hpp
 )
