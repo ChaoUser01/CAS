@@ -1,5 +1,7 @@
 #include<iostream>
 #include "core/Node.hpp"
+#include"output/printer.hpp"
+#include"calculus/Differentiator.hpp"
 
 int main()
 {
@@ -11,6 +13,14 @@ int main()
         two
     );
 
-    std::cout << "Created x^2 tree\n";
+    std::cout << "Original: ";
+    printExpression(power);
+    std::cout <<"\n";
+
+    auto derivative = differentiate(power, "x");
+    std::cout << "Derivative: ";
+    printExpression(derivative);
+    std::cout << "\n";
+
     return 0;
 }
