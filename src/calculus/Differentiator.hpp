@@ -38,5 +38,16 @@ std::shared_ptr<Node> differentiate(
             newPower
         );
     }
+    if(node->type == NodeType::ADD)
+    {
+        auto leftDerivative = differentiate(node->left, variable);
+        auto rightDerivative = differentiate(node->right, variable);
+
+        return std::make_shared<Node>(
+            NodeType::ADD,
+            leftDerivative,
+            rightDerivative
+        );
+    }
     throw std::runtime_error("Unsupported expression type");
 }
